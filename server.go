@@ -286,37 +286,6 @@ func fetchGatePrice() (float64, error) {
 	return price, nil
 }
 
-// huobi.pro
-func fetchHuobiPrice() (float64, error) {
-	type ApiResponse struct {
-		Tick struct {
-			Data []struct {
-				Price float64 `json:"price"`
-			} `json:"data"`
-		} `json:"tick"`
-	}
-
-	name := "Huobi"
-	url := "https://api.huobi.pro/market/trade?symbol=btcusdt"
-	resp := ApiResponse{}
-
-	if err := getPriceData(url, &resp); err != nil {
-		return 0, fmt.Errorf("failed to make HTTP request (%s): %w", name, err)
-	}
-
-	if len(resp.Tick.Data) == 0 {
-                return 0, fmt.Errorf("failed to access price field in response (%s)", name)
-	}
-
-	price := resp.Tick.Data[0].Price
-	err := validatePrice(name, price)
-	if err != nil {
-		return 0, fmt.Errorf("invalid price value in response (%s): %f", name, price)
-	}
-
-	return price, nil
-}
-
 // kraken.com
 func fetchKrakenPrice() (float64, error) {
 	type ApiResponse struct {
@@ -484,7 +453,6 @@ func main() {
 				fetchCoinbasePrice,
 				fetchCryptoPrice,
 				fetchGatePrice,
-				fetchHuobiPrice,
 				fetchKrakenPrice,
 				fetchKuCoinPrice,
 				fetchOKXPrice,
