@@ -3,7 +3,6 @@ curl -s https://api.bitget.com/api/v2/spot/market/tickers?symbol=BTCUSDT | jq -r
 curl -s https://api.btse.com/spot/api/v3.2/price?symbol=BTC-USD | jq -r '.[0].lastPrice'
 curl -s https://api.crypto.com/v2/public/get-ticker?instrument_name=BTC_USDT | jq -r '.result.data.[0].a'
 curl -s https://api.exchange.coinbase.com/products/BTC-USD/ticker/ | jq -r '.price'
-curl -s https://api.huobi.pro/market/trade?symbol=btcusdt | jq -r '.tick.data.[0].price'
 curl -s https://api.kraken.com/0/public/Ticker?pair=BTCUSD | jq -r '.result.XXBTZUSD.a.[0]'
 curl -s https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=BTC-USDC | jq -r '.data.price'
 curl -s https://data.gateapi.io/api2/1/ticker/sbtc_usdt | jq -r '.last'
