@@ -258,7 +258,7 @@ func fetchGatePrice() (float64, error) {
 	}
 
 	name := "Gate"
-	url := "https://data.gateapi.io/api2/1/ticker/sbtc_usdt"
+	url := "https://data.gateapi.io/api2/1/ticker/btc_usdt"
 	resp := ApiResponse{}
 
 	if err := getPriceData(url, &resp); err != nil {

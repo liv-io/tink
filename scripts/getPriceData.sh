@@ -5,7 +5,7 @@ curl -s https://api.crypto.com/v2/public/get-ticker?instrument_name=BTC_USDT | j
 curl -s https://api.exchange.coinbase.com/products/BTC-USD/ticker/ | jq -r '.price'
 curl -s https://api.kraken.com/0/public/Ticker?pair=BTCUSD | jq -r '.result.XXBTZUSD.a.[0]'
 curl -s https://api.kucoin.com/api/v1/market/orderbook/level1?symbol=BTC-USDC | jq -r '.data.price'
-curl -s https://data.gateapi.io/api2/1/ticker/sbtc_usdt | jq -r '.last'
+curl -s https://data.gateapi.io/api2/1/ticker/btc_usdt | jq -r '.last'
 curl -s https://openapi.bitrue.com/api/v1/ticker/price?symbol=btcusdt | jq -r '.price'
 curl -s https://sapi.xt.com/v4/public/ticker?symbol=BTC_usdt | jq -r '.result.[0].c'
 curl -s https://www.okx.com/api/v5/market/ticker?instId=BTC-USDC | jq -r '.data.[0].last'
